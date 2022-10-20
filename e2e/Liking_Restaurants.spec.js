@@ -20,6 +20,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.amOnPage('/#/like');
   I.seeElement('.restaurant-item');
+
   const likedRestoTitle = await I.grabTextFrom('.restaurant__title');
   assert.strictEqual(firstRestoTitle, likedRestoTitle);
 
@@ -32,5 +33,4 @@ Scenario('liking one restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/like');
-  I.amOnPage('/'); // back to default page
 });
